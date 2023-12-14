@@ -7,7 +7,7 @@ Both must have 5 letters and 3 numbers.*/
 
 int main()
 {
-  /*O usuario ira se cadastrar*/
+  /*The user will register*/
 
   int count_letters, count_numbers;
   char user[8], password[8], user_name[8], user_password[8];
@@ -38,7 +38,7 @@ int main()
       if(isalpha(password[i])){
         count_letters++;
       }
-      else if(isdigit(senha[i])){
+      else if(isdigit(password[i])){
         count_numbers++;
     }
   }
@@ -48,7 +48,7 @@ int main()
   }while(count_letters != 5 || count_numbers != 3);
   printf("\nRegistration completed successfully!\n");
   
-  /*O usuario fara o login*/
+  /*The user will login*/
 
   do{
     printf("\nEnter your username: ");
