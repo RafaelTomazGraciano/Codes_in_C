@@ -1,31 +1,34 @@
-/*Develop a program that draws 10 numbers between 0 and 100 and
-show on screen:
-a) What were the numbers drawn?
-b) How many numbers are above 50
-c) How many numbers are divisible by 3*/
+/*Develop a program that reads the salary and gender of several employees.
+At the end, show the total wages paid to men and the total wages paid to women.
+The program will ask the user if he wants to continue or not
+whenever you read an employee's data.*/
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <unistd.h>
 
 int main()
 {
-  int i = 0, number, above50 = 0, divisible3 = 0;
-  srand(time(NULL));
-  while(i < 10){
-    number = rand()%101;
-    printf("%d\n", number);
-    if(number > 50){
-      above50++; 
+  float wage, totalmen, totalwomen;
+  char gender, answer = 'Y';
+  while(answer == 'Y' || answer == 'y'){
+    printf("Enter the wage's value of the employee: ");
+    scanf("%f", &wage);
+
+    fflush(stdin); // clear the buffer of keyboard input
+    printf("Enter the employee's gender[W/M]\n");
+    scanf("%c", &gender);
+
+    if(gender == 'W' || gender == 'w'){
+      totalwomen += wage;
+    }  
+    else if(gender == 'M' || gender == 'm'){
+      totalmen += wage;
     }
-    if(number % 3 == 0){
-      divisible3++;
-    }
-    i++;
+
+    printf("Do you want to enter another value?[Y/N] \n");
+    fflush(stdin); // clear the buffer of keyboard input
+    scanf("%c", &answer);
   }
-  printf("These were the numbers drawn! \n");
-  printf("Quantity of numbers above 50: %d\n", above50);
-  printf("Quantity of number divisible by 3: %d", divisible3);
+  printf("The total wage paid to men is: %.2f\n", totalmen);
+  printf("The total wage paid to women is: %.2f\n", totalwomen);
   return 0;
 }

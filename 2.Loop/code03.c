@@ -1,16 +1,19 @@
-/*Program to calculate factorial*/
+/*Fibonacci Sequence Program*/
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
-  int number, count, result = 1;
-  printf("Enter the number:  ");
-  scanf("%d", &number);
-  for(count = 1; count <= number; count++){
-    result *= count;
-  }
-  printf("The result is %d\n", result);
-  return 0;
+int limit, prior = 0, actual = 1, next;
+printf("Enter the limit of the Fibonacci Sequence:");
+scanf("%d", &limit);
+printf("%d \n", prior);
+while(actual <= limit){
+  printf("%d \n", actual);
+  next = prior + actual;
+  prior = actual;
+  actual = next;
+}
+printf("Fibonacci Sequence up to %d\n", limit);
+return 0;
 }
