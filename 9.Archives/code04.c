@@ -1,4 +1,4 @@
-/*Write a program that reads a text file containing a list of
+/*Write a program that creates a text file containing a list of
 shopping. Each line of the file has a name, quantity and unit value
 of product. The program then displays the purchase total.*/
 

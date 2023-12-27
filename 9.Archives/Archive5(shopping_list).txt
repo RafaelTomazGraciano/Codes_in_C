@@ -1,5 +1,5 @@
-leite   |   12   |   2.99
-arroz   |   2   |   23.98
-feijao   |   2   |   5.98
+milk   |   12   |   2.99
+rice   |   2   |   23.98
+beans   |   2   |   5.98
 
 Total: 95.80
