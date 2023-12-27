@@ -13,7 +13,7 @@ int main(){
         if(n < 0){
             break;
         }
-        arc = fopen("Archive4.txt", "a");
+        arc = fopen("Archive4(binary).txt", "a");
         if(arc == NULL){
             printf("Error opening file");
             return 1;
