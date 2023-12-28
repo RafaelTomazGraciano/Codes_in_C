@@ -56,7 +56,7 @@ int main(){
 int **matrix(int x, int y){
     int **p = (int **) malloc(x * sizeof(int *));
     if(p == NULL){
-        printf("Erro: memoria insuficiente");
+        printf("Error: insuficient memory");
         exit(1);
     }
     for(int i = 0; i < x; i++){

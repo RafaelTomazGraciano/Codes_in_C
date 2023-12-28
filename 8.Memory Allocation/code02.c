@@ -22,7 +22,7 @@ int search(int **p, int number, int n){
     scanf("%d", &n);
     int **p = (int **) malloc(n * sizeof(int *));
     if(p == NULL){
-        printf("Erro: memoria insuficiente");
+        printf("Error: insuficient memory");
         exit(1);
     }
     for(int i = 0; i < n; i++){
