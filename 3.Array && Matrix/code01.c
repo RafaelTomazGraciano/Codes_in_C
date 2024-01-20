@@ -17,7 +17,7 @@ int main(){
     }
     printf("\nThe result is\n");
     for(int i = 0; i < 20; i++){
-        printf("%,4f\n", array2[i]);
+        printf("%.4f\n", array2[i]);
     }
     
     return 0;
