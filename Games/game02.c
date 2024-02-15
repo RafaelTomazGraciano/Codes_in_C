@@ -9,7 +9,7 @@ void player1(char matrix[3][3]);
 
 void player2(char matrix[3][3]);
 
-int verification(char matrix[3][3]);
+void verification(char matrix[3][3]);
 
 int main(){
 
@@ -57,13 +57,17 @@ void player1(char matrix[3][3]){
             printf("This position is already occupied!\n");
             go_on = 1;
         }   
-                
+
+        else if(line < 0 || line > 2 || column < 0 || column > 2) {
+            printf("This position doesn't exist\n");
+        }  
+
         else{
             matrix[line][column] = 'X';
             go_on = 0;
         }
 
-    }while(go_on == 1);
+    }while(go_on == 1 || line < 0 || line > 2 || column < 0 || column > 2);
 
     for(int i = 0; i < 3; i++){
         printf("\n");
@@ -82,7 +86,7 @@ void player1(char matrix[3][3]){
 void player2(char matrix[3][3]){
         int line, column, go_on = 0;
     do{
-        printf("\nPlayer Two's turn [0]\n");
+        printf("\nPlayer Two's turn [O]\n");
         printf("Choose the postion on the matrix [LINE]: ");
         scanf("%d", &line);
         printf("Choose the postion on the matrix [COLUMN]: ");
@@ -93,13 +97,17 @@ void player2(char matrix[3][3]){
             printf("This position is already occupied!\n");
             go_on = 1;
         }   
-                
+
+        else if(line < 0 || line > 2 || column < 0 || column > 2) {
+            printf("This position doesn't exist\n");
+        }
+
         else{
             matrix[line][column] = 'O';
             go_on = 0;
         }
 
-    }while(go_on == 1);
+    }while(go_on == 1 || line < 0 || line > 2 || column < 0 || column > 2);
 
     for(int i = 0; i < 3; i++){
         printf("\n");
@@ -114,7 +122,7 @@ void player2(char matrix[3][3]){
     }
 }
 
-int verification(char matrix[3][3]){
+void verification(char matrix[3][3]){
     // Checking for LINES for X or O victory. 
     for (int i = 0; i < 3; i++) { 
         
@@ -176,8 +184,10 @@ int verification(char matrix[3][3]){
             }
     } 
   
-    // Else if none of them have won then return 0 
-    return 0; 
+    // Else if none of them have won 
+    else{
+        printf("\nDraw");
+    } 
 
 }
 
