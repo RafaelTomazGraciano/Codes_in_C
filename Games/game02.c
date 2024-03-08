@@ -9,9 +9,10 @@ void player1(char matrix[3][3]);
 
 void player2(char matrix[3][3]);
 
-void verification(char matrix[3][3]);
+void verification(char matrix[3][3], int aux);
 
 int main(){
+    int aux = 0;
 
     char matrix[3][3];
     //clear matrix
@@ -30,15 +31,16 @@ int main(){
     player1(matrix);
     player2(matrix);
     player1(matrix);
-    verification(matrix);
+    verification(matrix, aux);
     player2(matrix);
-    verification(matrix);
+    verification(matrix, aux);
     player1(matrix);
-    verification(matrix);
+    verification(matrix, aux);
     player2(matrix);
-    verification(matrix);
+    verification(matrix, aux);
     player1(matrix);
-    verification(matrix);
+    aux = 1;
+    verification(matrix, aux);
 
     return 0;
 }
@@ -122,7 +124,7 @@ void player2(char matrix[3][3]){
     }
 }
 
-void verification(char matrix[3][3]){
+void verification(char matrix[3][3], int aux){
     // Checking for LINES for X or O victory. 
     for (int i = 0; i < 3; i++) { 
         
@@ -182,7 +184,11 @@ void verification(char matrix[3][3]){
                 printf("\nPlayer Two won!");
                 exit(0);
             }
-    } 
+    }
+
+    if(aux == 0){
+        printf("\n");
+    }
   
     // Else if none of them have won 
     else{
